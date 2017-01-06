@@ -20,7 +20,7 @@ Some of the features of SessionMessage are:
   * Place fail.gif,info.gif,ok.gif,warn.gif in /Content/Images folder
   * If you need Ajax request notification support, put the following in filterconfig.cs
 ```js
-    		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+    	public static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{
 			filters.Add(new MvcAjaxMessagesFilterAttribute());
 		}
@@ -31,7 +31,7 @@ Some of the features of SessionMessage are:
 
 ```
 #Screenshots
-![SessionMessage](screenshots/modal.jpg?raw=true "modaldialog")
+![SessionMessage](screenshots/modaldialog.jpg?raw=true "modaldialog")
 ![SessionMessage](screenshots/statusbar_success.jpg?raw=true "statusbar success")
 ![SessionMessage](screenshots/statusbar_error.jpg?raw=true "statusbar error")
 ![SessionMessage](screenshots/statusbar_warning.jpg?raw=true "statusbar warning")
