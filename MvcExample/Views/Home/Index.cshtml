@@ -1,0 +1,64 @@
+﻿@using SessionMessage;
+@model MvcExample.Controllers.SessionMessageViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="container">
+        <section class="row">
+            <h1>Session Message</h1>
+
+            <div class="well row">
+                <div class="row">
+                    <div class="span4">
+                        <div class="control-group">
+                            <div class="controls">
+                                <label class="control-label" for="message">Message</label>
+                                @Html.TextAreaFor(m => m.Message, new { rows = "3", cols = "50", placeholder = "Enter a message ..." })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="span2">
+                        <div class="control-group" id="toastTypeGroup">
+                            <div class="controls">
+                                <label>Message Type</label>
+                                @foreach (MessageType value in Enum.GetValues(typeof(MessageType)))
+                                {
+                                    <div>
+                                        @Html.RadioButtonFor(m => m.Type, value) @Html.Label(value.ToString())
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group" id="positionGroup">
+                        <div class="controls">
+                            <label>Message Options</label>
+                            @foreach (MessageBehaviors value in Enum.GetValues(typeof(MessageBehaviors)))
+                            {
+                                <div>
+                                    @Html.RadioButtonFor(m => m.Behaviors, value) @Html.Label(value.ToString())
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <input type="submit" class="btn btn-primary btn-large" value="Show Message" />
+                </div>
+            </div>
+
+            <footer class="row">
+                <h2>Links</h2>
+
+                <ul>
+                    <li><a href="https://github.com/zsu/SessionMessage">GitHub</a></li>
+                </ul>
+            </footer>
+        </section>
+    </div>
+}
