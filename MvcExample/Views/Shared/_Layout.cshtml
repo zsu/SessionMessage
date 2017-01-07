@@ -42,6 +42,6 @@
     @Scripts.Render("~/bundles/jqueryui") 
     @Scripts.Render("~/bundles/toastr")
     @RenderSection("scripts", required: false);
-    @Html.RenderMessages()
+    @Html.FluentSessionMessage().DisplayPosition(Position.TopRight).Timeout(5000)
 </body>
 </html>

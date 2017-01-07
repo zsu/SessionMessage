@@ -27,7 +27,7 @@
                                 @foreach (MessageType value in Enum.GetValues(typeof(MessageType)))
                                 {
                                     <div>
-                                        @Html.RadioButtonFor(m => m.Type, value) @Html.Label(value.ToString())
+                                        @Html.RadioButtonFor(m => m.Type, value) @value.ToString()
                                     </div>
                                 }
                             </div>
@@ -39,7 +39,7 @@
                             @foreach (MessageBehaviors value in Enum.GetValues(typeof(MessageBehaviors)))
                             {
                                 <div>
-                                    @Html.RadioButtonFor(m => m.Behaviors, value) @Html.Label(value.ToString())
+                                    @Html.RadioButtonFor(m => m.Behaviors, value) @value.ToString()
                                 </div>
                             }
                         </div>
