@@ -9,6 +9,9 @@ Some of the features of SessionMessage are:
   * Support Ajax request notification
   * Customize options of display position, display timeout, animation effect,etc.
 
+#Demo
+  * Demo can be found at: http://devs.azurewebsites.net/
+
 #Getting started with SessionMessage
 
   * Reference SessionMessage.dll
