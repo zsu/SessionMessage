@@ -37,8 +37,8 @@ namespace SessionMessage
         }
         public static void SetMessage(MessageType messageType, MessageBehaviors behavior, string message, string key,string caption, MessageButton? messageButtons, MessageIcon? messageIcon)
         {
-            if (caption == null || caption.Trim() == string.Empty)
-                caption = messageType.ToString();
+            //if (caption == null || caption.Trim() == string.Empty)
+            //    caption = messageType.ToString();
             if (!messageButtons.HasValue)
                 messageButtons = MessageButton.Ok;
             if (!messageIcon.HasValue)

@@ -25,7 +25,7 @@ namespace SessionMessage
                 if (sessionMessages != null && sessionMessages.Count > 0)
                 {
                     string json = null;
-                    var messages = sessionMessages.Where(x => x.Behavior == MessageBehaviors.StatusBar).Select(x => new SessionMessageJsonModal { Message = x.Message, Type = Enum.GetName(typeof(MessageType), x.Type).ToLowerInvariant(),Key=x.Key }).ToList();
+                    var messages = sessionMessages.Where(x => x.Behavior == MessageBehaviors.StatusBar).Select(x => new SessionMessageJsonModal { Message = x.Message, Type = Enum.GetName(typeof(MessageType), x.Type),Key=x.Key,Caption=x.Caption }).ToList();
                     if (messages != null && messages.Count > 0)
                     {
                         DataContractJsonSerializer ser = new DataContractJsonSerializer(messages.GetType());
@@ -37,7 +37,7 @@ namespace SessionMessage
                         }
                         response.Headers.Add("X-Message", json);
                     }
-                    messages = sessionMessages.Where(x => x.Behavior == MessageBehaviors.Modal).Select(x => new SessionMessageJsonModal { Message = x.Message, Type = Enum.GetName(typeof(MessageType), x.Type).ToLowerInvariant(), Key=x.Key }).ToList();
+                    messages = sessionMessages.Where(x => x.Behavior == MessageBehaviors.Modal).Select(x => new SessionMessageJsonModal { Message = x.Message, Type = Enum.GetName(typeof(MessageType), x.Type), Key=x.Key }).ToList();
                     if (messages != null && messages.Count > 0)
                     {
                         DataContractJsonSerializer ser = new DataContractJsonSerializer(messages.GetType());
@@ -111,6 +111,12 @@ namespace SessionMessage
             }
             [DataMember]
             public string Key
+            {
+                get;
+                set;
+            }
+            [DataMember]
+            public string Caption
             {
                 get;
                 set;
