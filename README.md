@@ -59,4 +59,5 @@ WebForms:
 ![SessionMessage](screenshots/statusbar_warning.jpg?raw=true "statusbar warning")
 ![SessionMessage](screenshots/statusbar_info.jpg?raw=true "statusbar info")
 
-
+#License
+All source code is licensed under MIT license - http://www.opensource.org/licenses/mit-license.php
