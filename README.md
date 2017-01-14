@@ -12,6 +12,10 @@ Some of the features of SessionMessage are:
 #Demo
   * Demo can be found at: http://devs.azurewebsites.net/
 
+#NuGet
+```xml
+Install-Package MvcJqGrid
+```
 #Getting started with SessionMessage
 
   * Reference SessionMessage.dll
