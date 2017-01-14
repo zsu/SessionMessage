@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SessionMessage
+namespace SessionMessages
 {
 	public class FluentSessionMessage : IHtmlString
     {

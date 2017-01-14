@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SessionMessage
+namespace SessionMessages
 {
     public interface ISessionMessageProvider
     {

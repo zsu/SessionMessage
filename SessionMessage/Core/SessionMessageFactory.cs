@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Configuration;
-namespace SessionMessage
+namespace SessionMessages
 {
 
 

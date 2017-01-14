@@ -3,7 +3,7 @@ using System;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
 //using App.Common.InversionOfControl;
-namespace SessionMessage
+namespace SessionMessages
 {
     public class SessionMessageManager
     {

@@ -6,7 +6,7 @@ using System.Web;
 using System.Runtime.Serialization.Json;
 using System.IO;
 
-namespace SessionMessage
+namespace SessionMessages
 {
     public class CookieSessionMessageProvider:ISessionMessageProvider
     {

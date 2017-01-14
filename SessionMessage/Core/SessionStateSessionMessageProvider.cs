@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web;
 
-namespace SessionMessage
+namespace SessionMessages
 {
     public class SessionStateSessionMessageProvider:ISessionMessageProvider
     {

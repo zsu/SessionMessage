@@ -19,10 +19,10 @@ Some of the features of SessionMessage are:
   * Use it on your page;
 ```xml
 Razor:
-@using SessionMessage
+@using SessionMessages
 
 WebForms:
-<%@ Import Namespace="SessionMessage" %>
+<%@ Import Namespace="SessionMessages" %>
 ```
 ```xml
 Razor:
