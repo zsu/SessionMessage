@@ -14,7 +14,7 @@ Some of the features of SessionMessage are:
 
 #NuGet
 ```xml
-Install-Package MvcJqGrid
+Install-Package SessionMessage
 ```
 #Getting started with SessionMessage
 
