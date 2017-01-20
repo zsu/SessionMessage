@@ -1,5 +1,4 @@
 ﻿using SessionMessages;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcExample
@@ -13,7 +12,7 @@ namespace MvcExample
 		}
 		public static void RegisterWebApiGlobalFilters()
 		{
-			System.Web.Http.GlobalConfiguration.Configuration.Filters.Add(new AjaxMessagesFilterAttribute());
+            System.Web.Http.GlobalConfiguration.Configuration.Filters.Add(new AjaxMessagesFilterAttribute());
 		}
 	}
 }

@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Text;
 using System.Runtime.Serialization;
+using System.Web.Security.AntiXss;
 
 namespace SessionMessages
 {
@@ -25,7 +26,7 @@ namespace SessionMessages
                 if (sessionMessages != null && sessionMessages.Count > 0)
                 {
                     string json = null;
-                    var messages = sessionMessages.Where(x => x.Behavior == MessageBehaviors.StatusBar).Select(x => new SessionMessageJsonModal { Message = x.Message, Type = Enum.GetName(typeof(MessageType), x.Type),Key=x.Key,Caption=x.Caption }).ToList();
+                    var messages = sessionMessages.Where(x => x.Behavior == MessageBehaviors.StatusBar).Select(x => new SessionMessageJsonModal { Message = AntiXssEncoder.HtmlEncode(x.Message,false), Type = Enum.GetName(typeof(MessageType), x.Type),Key=x.Key,Caption=x.Caption }).ToList();
                     if (messages != null && messages.Count > 0)
                     {
                         DataContractJsonSerializer ser = new DataContractJsonSerializer(messages.GetType());
@@ -138,7 +139,7 @@ namespace SessionMessages
                     if (sessionMessages != null && sessionMessages.Count > 0)
                     {
                         string json = null;
-                        var messages = sessionMessages.Where(x => x.Behavior == MessageBehaviors.StatusBar).Select(x => new SessionMessageJsonModal { Message = x.Message, Type = Enum.GetName(typeof(MessageType), x.Type).ToLowerInvariant(), Key = x.Key }).ToList();
+                        var messages = sessionMessages.Where(x => x.Behavior == MessageBehaviors.StatusBar).Select(x => new SessionMessageJsonModal { Message = AntiXssEncoder.HtmlEncode(x.Message,false), Type = Enum.GetName(typeof(MessageType), x.Type).ToLowerInvariant(), Key = x.Key }).ToList();
                         if (messages != null && messages.Count > 0)
                         {
                             DataContractJsonSerializer ser = new DataContractJsonSerializer(messages.GetType());
