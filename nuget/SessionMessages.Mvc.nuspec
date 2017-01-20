@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SessionMessages.Mvc</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <authors>Zhicheng Su</authors>
     <owners>Zhicheng Su</owners>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
@@ -12,6 +12,7 @@
     <copyright>Copyright 2017 Zhicheng Su</copyright>
     <tags>asp.net, mvc, htmlhelper</tags>
     <dependencies>
+      	  <dependency id="SessionMessages.Core" version="1.0.0" />
       	  <dependency id="jQuery" version="1.12.4" />
 	  <dependency id="jQuery.UI.Combined" version="1.12.1" />
 	  <dependency id="toastr" version="2.1.1" />
