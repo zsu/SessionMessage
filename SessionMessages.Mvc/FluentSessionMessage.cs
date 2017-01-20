@@ -4,8 +4,9 @@ using System.Web.Mvc;
 using System.Collections.Generic;
 using System.Text;
 using System.Web.Security.AntiXss;
+using SessionMessages.Core;
 
-namespace SessionMessages
+namespace SessionMessages.Mvc
 {
 	public class FluentSessionMessage : IHtmlString
     {

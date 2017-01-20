@@ -1,4 +1,4 @@
-﻿namespace SessionMessages
+﻿namespace SessionMessages.Core
 {
     public interface ISessionMessageFactory
     {

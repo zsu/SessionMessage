@@ -8,8 +8,9 @@ using System.IO;
 using System.Text;
 using System.Runtime.Serialization;
 using System.Web.Security.AntiXss;
+using SessionMessages.Core;
 
-namespace SessionMessages
+namespace SessionMessages.Mvc
 {
     /// <summary>
     /// If we're dealing with ajax requests, any message that is in the view data goes to

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>SessionMessage</id>
-    <version>1.5.0</version>
+    <id>SessionMessages.Mvc</id>
+    <version>1.0.0</version>
     <authors>Zhicheng Su</authors>
     <owners>Zhicheng Su</owners>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
     <projectUrl>https://github.com/zsu/SessionMessage</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A asp.net MVC/Web Form library for Modal dialog/StatusBar notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.</description>
+    <description>Asp.net MVC/Web Form helper for Modal dialog/StatusBar notifications.</description>
     <copyright>Copyright 2017 Zhicheng Su</copyright>
     <tags>asp.net, mvc, htmlhelper</tags>
     <dependencies>
@@ -20,7 +20,7 @@
     </dependencies>
   </metadata>
   	<files>
-	    <file src="Content\Images\*" target="Content\Content\Images" />
-		<file src="..\SessionMessage\bin\Release\SessionMessage.dll" target="lib\net45\SessionMessage.dll" />
+		<file src="Content\Images\*" target="Content\Content\Images" />
+		<file src="..\SessionMessages.Mvc\bin\Release\SessionMessages.Mvc.dll" target="lib\net45\SessionMessages.Mvc.dll" />
 	</files>
 </package>

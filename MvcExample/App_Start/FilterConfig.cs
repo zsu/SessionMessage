@@ -1,6 +1,6 @@
-﻿using SessionMessages;
+﻿using SessionMessages.Core;
 using System.Web.Mvc;
-
+using SessionMessages.Mvc;
 namespace MvcExample
 {
 	public class FilterConfig

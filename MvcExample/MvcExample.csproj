@@ -232,9 +232,13 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SessionMessage\SessionMessage.csproj">
+    <ProjectReference Include="..\SessionMessages.Core\SessionMessages.Core.csproj">
+      <Project>{b3fba356-0c66-406c-b262-b83cc05d9f3a}</Project>
+      <Name>SessionMessages.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SessionMessages.Mvc\SessionMessages.Mvc.csproj">
       <Project>{4e575887-edf4-4b7f-8ed7-429ff634a309}</Project>
-      <Name>SessionMessage</Name>
+      <Name>SessionMessages.Mvc</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SessionMessages.Core</id>
+    <version>1.0.0</version>
+    <authors>Zhicheng Su</authors>
+    <owners>Zhicheng Su</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>https://github.com/zsu/SessionMessage</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core library for SessionMessages Modal dialog/StatusBar notifications.</description>
+    <copyright>Copyright 2017 Zhicheng Su</copyright>
+    <tags>asp.net, mvc, htmlhelper</tags>
+  </metadata>
+  	<files>
+		<file src="..\SessionMessages.Core\bin\Release\SessionMessages.Core.dll" target="lib\net45\SessionMessages.Core.dll" />
+	</files>
+</package>

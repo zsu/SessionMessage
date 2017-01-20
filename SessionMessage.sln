@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionMessage", "SessionMessage\SessionMessage.csproj", "{4E575887-EDF4-4B7F-8ED7-429FF634A309}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionMessages.Mvc", "SessionMessages.Mvc\SessionMessages.Mvc.csproj", "{4E575887-EDF4-4B7F-8ED7-429FF634A309}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcExample", "MvcExample\MvcExample.csproj", "{4C0A38F3-5523-42F4-9FE9-6E6452F5B6C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionMessages.Core", "SessionMessages.Core\SessionMessages.Core.csproj", "{B3FBA356-0C66-406C-B262-B83CC05D9F3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4C0A38F3-5523-42F4-9FE9-6E6452F5B6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C0A38F3-5523-42F4-9FE9-6E6452F5B6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C0A38F3-5523-42F4-9FE9-6E6452F5B6C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3FBA356-0C66-406C-B262-B83CC05D9F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3FBA356-0C66-406C-B262-B83CC05D9F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3FBA356-0C66-406C-B262-B83CC05D9F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3FBA356-0C66-406C-B262-B83CC05D9F3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Configuration;
-namespace SessionMessages
+namespace SessionMessages.Core
 {
 
 
@@ -11,7 +11,7 @@ namespace SessionMessages
         public SessionMessageFactory(string typeName)
         {
             if (string.IsNullOrEmpty(typeName))
-                typeName = "SessionMessages.CookieSessionMessageProvider,SessionMessage";
+                typeName = "SessionMessages.Core.CookieSessionMessageProvider,SessionMessages.Core";
 
             _type = Type.GetType(typeName, true, true);
         }

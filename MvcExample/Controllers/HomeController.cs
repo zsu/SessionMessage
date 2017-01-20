@@ -1,4 +1,5 @@
-﻿using SessionMessages;
+﻿using SessionMessages.Core;
+using SessionMessages.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;

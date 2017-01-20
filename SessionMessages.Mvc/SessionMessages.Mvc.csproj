@@ -7,8 +7,8 @@
     <ProjectGuid>{4E575887-EDF4-4B7F-8ED7-429FF634A309}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SessionMessage</RootNamespace>
-    <AssemblyName>SessionMessage</AssemblyName>
+    <RootNamespace>SessionMessages.Mvc</RootNamespace>
+    <AssemblyName>SessionMessages.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -84,19 +84,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\CookieSessionMessageProvider.cs" />
-    <Compile Include="Core\ISessionMessageFactory.cs" />
-    <Compile Include="Core\ISessionMessageProvider.cs" />
-    <Compile Include="Mvc\AjaxMessagesFilterAttribute.cs" />
-    <Compile Include="Mvc\FluentSessionMessage.cs" />
-    <Compile Include="Mvc\SessionMessageHelper.cs" />
+    <Compile Include="AjaxMessagesFilterAttribute.cs" />
+    <Compile Include="FluentSessionMessage.cs" />
+    <Compile Include="SessionMessageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\SessionMessage.cs" />
-    <Compile Include="Core\SessionMessageFactory.cs" />
-    <Compile Include="Core\SessionStateSessionMessageProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SessionMessages.Core\SessionMessages.Core.csproj">
+      <Project>{b3fba356-0c66-406c-b262-b83cc05d9f3a}</Project>
+      <Name>SessionMessages.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
