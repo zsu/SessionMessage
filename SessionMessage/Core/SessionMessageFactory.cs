@@ -11,7 +11,7 @@ namespace SessionMessages
         public SessionMessageFactory(string typeName)
         {
             if (string.IsNullOrEmpty(typeName))
-                typeName = "App.Common.SessionMessage.CookieSessionMessageProvider,App.Common";
+                typeName = "SessionMessages.CookieSessionMessageProvider,SessionMessage";
 
             _type = Type.GetType(typeName, true, true);
         }

@@ -2,23 +2,22 @@
 using System;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-//using App.Common.InversionOfControl;
 namespace SessionMessages
 {
     public class SessionMessageManager
     {
+        private static volatile ISessionMessageProvider _provider;
+        private static object _syncRoot = new Object();
         private const string SessionMessageKey = "SessionMessage";
-		private static ISessionMessageProvider provider = new CookieSessionMessageProvider();
 
         private SessionMessageManager() { }
         public static List<SessionMessage> GetMessage()
         {
-            //ISessionMessageProvider provider = IoC.GetService<ISessionMessageProvider>();
-            return provider.GetMessage();
+            return Provider.GetMessage();
         }
         public static void SetMessage(MessageType messageType, MessageBehaviors behavior, string message)
         {
-            SetMessage(messageType, behavior, message, null,null,null,null);
+            SetMessage(messageType, behavior, message, null, null, null, null);
         }
         /// <summary>
         /// Set message. message with key only display once not matter how many ajax calls on the same page.
@@ -27,15 +26,15 @@ namespace SessionMessages
         /// <param name="behavior"></param>
         /// <param name="message"></param>
         /// <param name="key"></param>
-        public static void SetMessage(MessageType messageType, MessageBehaviors behavior, string message,string key)
+        public static void SetMessage(MessageType messageType, MessageBehaviors behavior, string message, string key)
         {
             SetMessage(messageType, behavior, message, key, null, null, null);
         }
         public static void SetMessage(MessageType messageType, MessageBehaviors behavior, string message, MessageButton? messageButtons)
         {
-            SetMessage(messageType, behavior, message,null,null, messageButtons, null);
+            SetMessage(messageType, behavior, message, null, null, messageButtons, null);
         }
-        public static void SetMessage(MessageType messageType, MessageBehaviors behavior, string message, string key,string caption, MessageButton? messageButtons, MessageIcon? messageIcon)
+        public static void SetMessage(MessageType messageType, MessageBehaviors behavior, string message, string key, string caption, MessageButton? messageButtons, MessageIcon? messageIcon)
         {
             //if (caption == null || caption.Trim() == string.Empty)
             //    caption = messageType.ToString();
@@ -56,14 +55,29 @@ namespace SessionMessages
                         break;
                 }
             }
-            SessionMessage sessionMessage = new SessionMessage(messageType, behavior, message, key,caption, messageButtons, messageIcon);
-            //ISessionMessageProvider provider = IoC.GetService<ISessionMessageProvider>();
-            provider.SetMessage(sessionMessage);
+            SessionMessage sessionMessage = new SessionMessage(messageType, behavior, message, key, caption, messageButtons, messageIcon);
+            Provider.SetMessage(sessionMessage);
         }
         public static void Clear()
         {
-            //ISessionMessageProvider provider = IoC.GetService<ISessionMessageProvider>();
-            provider.Clear();
+            Provider.Clear();
+        }
+        private static ISessionMessageProvider Provider
+        {
+            get
+            {
+                if (_provider == null)
+                {
+                    lock (_syncRoot)
+                    {
+                        if (_provider == null)
+                            _provider = new SessionMessageFactory().CreateInstance();
+                    }
+                }
+
+                return _provider;
+            }
+
         }
     }
     /// <summary>
@@ -75,47 +89,47 @@ namespace SessionMessages
         [DataMember]
         public string Caption
         {
-            get;set;
+            get; set;
         }
         [DataMember]
         public string Message
         {
-            get;set;
+            get; set;
         }
         [DataMember]
         public MessageType Type
         {
-            get;set;
+            get; set;
         }
         [DataMember]
         public MessageBehaviors Behavior
         {
-            get;set;
+            get; set;
         }
         [DataMember]
         public MessageButton? Buttons
         {
-            get;set;
+            get; set;
         }
         [DataMember]
         public MessageIcon? Icon
         {
-            get;set;
+            get; set;
         }
         [DataMember]
         public string Key { get; set; }
         public SessionMessage(MessageType messageType, MessageBehaviors behavior, string message)
-            : this(messageType, behavior, message, null,null, null, null)
+            : this(messageType, behavior, message, null, null, null, null)
         {
         }
-        public SessionMessage(MessageType messageType, MessageBehaviors behavior, string message, string key,string caption, MessageButton? messageButtons, MessageIcon? messageIcon)
+        public SessionMessage(MessageType messageType, MessageBehaviors behavior, string message, string key, string caption, MessageButton? messageButtons, MessageIcon? messageIcon)
         {
             if (behavior == MessageBehaviors.Modal && (!messageButtons.HasValue || !messageIcon.HasValue))
             {
                 messageButtons = messageButtons ?? MessageButton.Ok;
-                if(!messageIcon.HasValue)
+                if (!messageIcon.HasValue)
                 {
-                    switch(messageType)
+                    switch (messageType)
                     {
                         case MessageType.Error:
                             messageIcon = MessageIcon.Error;
@@ -156,17 +170,17 @@ namespace SessionMessages
     }
     public enum MessageIcon
     {
-		None = 0,
-		Error = 1,
-		Hand = 2,
-		Stop = 3,
-		Lock = 4,
-		Question = 5,
-		Exclamation = 6,
-		Warning = 7,
-		Asterisk = 8,
-		Information = 9,
-		Success = 10
+        None = 0,
+        Error = 1,
+        Hand = 2,
+        Stop = 3,
+        Lock = 4,
+        Question = 5,
+        Exclamation = 6,
+        Warning = 7,
+        Asterisk = 8,
+        Information = 9,
+        Success = 10
     }
 
     [Flags]
@@ -180,7 +194,7 @@ namespace SessionMessages
         Error = 1,
         Warning = 2,
         Info = 3,
-		Success = 4
+        Success = 4
     }
 }
 

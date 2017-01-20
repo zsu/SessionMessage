@@ -15,7 +15,7 @@ namespace SessionMessages
     /// If we're dealing with ajax requests, any message that is in the view data goes to
     /// the http header.
     /// </summary>
-    public class MvcAjaxMessagesFilterAttribute : ActionFilterAttribute //TODO: return data only
+    public class MvcAjaxMessagesFilterAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
@@ -50,47 +50,6 @@ namespace SessionMessages
                         }
                         response.Headers.Add("X-ModalMessage", json);
                     }
-                    //TagBuilder messageBoxBuilder = null, messageBoxModal = null, messageBoxStatusBar = null;
-                    //for (int i = 0; i < sessionMessages.Count; i++)
-                    //{
-                    //    var sessionMessage = sessionMessages[i];
-                    //    switch (sessionMessage.Behavior)
-                    //    {
-                    //        case MessageBehaviors.Modal:
-                    //            if (messageBoxModal == null)
-                    //            {
-                    //                messageBoxModal = new TagBuilder("div");
-                    //                messageBoxModal.Attributes.Add("id", "messageboxModal");
-                    //                //messageBoxModal.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
-                    //            }
-                    //            messageBoxBuilder = new TagBuilder("div");
-                    //            messageBoxBuilder.Attributes.Add("id", "messagebox" + i);
-                    //            messageBoxBuilder.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
-                    //            messageBoxBuilder.InnerHtml += sessionMessage.Message;
-                    //            messageBoxModal.InnerHtml += messageBoxBuilder.ToString();
-                    //            break;
-                    //        case MessageBehaviors.StatusBar:
-                    //        default:
-                    //            if (messageBoxStatusBar == null)
-                    //            {
-                    //                messageBoxStatusBar = new TagBuilder("div");
-                    //                messageBoxStatusBar.Attributes.Add("id", "messageboxStatusBar");
-                    //                //messageBoxStatusBar.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
-                    //                messageBoxStatusBar.AddCssClass(String.Format("messagebox {0}", Enum.GetName(typeof(MessageType), sessionMessage.Type).ToLowerInvariant()));
-                    //            }
-                    //            messageBoxBuilder = new TagBuilder("div");
-                    //            messageBoxBuilder.Attributes.Add("id", "messagebox" + i);
-                    //            messageBoxBuilder.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
-                    //            messageBoxBuilder.AddCssClass(String.Format("messagebox {0}", Enum.GetName(typeof(MessageType), sessionMessage.Type).ToLowerInvariant()));
-                    //            messageBoxBuilder.InnerHtml += sessionMessage.Message;
-                    //            messageBoxStatusBar.InnerHtml += messageBoxBuilder.ToString();
-                    //            break;
-                    //    }
-                    //}
-                    //if (messageBoxStatusBar != null && !string.IsNullOrEmpty(messageBoxStatusBar.ToString()))
-                    //    response.Headers.Add("X-Message", messageBoxStatusBar.ToString());
-                    //if (messageBoxModal != null && !string.IsNullOrEmpty(messageBoxModal.ToString()))
-                    //    response.Headers.Add("X-ModalMessage", messageBoxModal.ToString());
                     SessionMessageManager.Clear();
                 }
             }
@@ -124,7 +83,7 @@ namespace SessionMessages
             }
         }
     }
-    public class AjaxMessagesFilterAttribute : System.Web.Http.Filters.ActionFilterAttribute    //TODO: return data only
+    public class AjaxMessagesFilterAttribute : System.Web.Http.Filters.ActionFilterAttribute
     {
         public override void OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext filterContext)
         {
@@ -164,47 +123,6 @@ namespace SessionMessages
                             response.Headers.Add("X-ModalMessage", json);
                         }
                         SessionMessageManager.Clear();
-                        //TagBuilder messageBoxBuilder = null, messageBoxModal = null, messageBoxStatusBar = null;
-                        //for (int i = 0; i < sessionMessages.Count; i++)
-                        //{
-                        //    var sessionMessage = sessionMessages[i];
-                        //    switch (sessionMessage.Behavior)
-                        //    {
-                        //        case MessageBehaviors.Modal:
-                        //            if (messageBoxModal == null)
-                        //            {
-                        //                messageBoxModal = new TagBuilder("div");
-                        //                messageBoxModal.Attributes.Add("id", "messageboxModal");
-                        //                messageBoxModal.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
-                        //            }
-                        //            messageBoxBuilder = new TagBuilder("div");
-                        //            messageBoxBuilder.Attributes.Add("id", "messagebox" + i);
-                        //            messageBoxBuilder.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
-                        //            messageBoxBuilder.AddCssClass(String.Format("messagebox {0}", Enum.GetName(typeof(MessageType), sessionMessage.Type).ToLowerInvariant()));
-                        //            messageBoxBuilder.InnerHtml += sessionMessage.Message;
-                        //            messageBoxModal.InnerHtml += messageBoxBuilder.ToString();
-                        //            break;
-                        //        case MessageBehaviors.StatusBar:
-                        //        default:
-                        //            if (messageBoxStatusBar == null)
-                        //            {
-                        //                messageBoxStatusBar = new TagBuilder("div");
-                        //                messageBoxStatusBar.Attributes.Add("id", "messageboxStatusBar");
-                        //                messageBoxStatusBar.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
-                        //            }
-                        //            messageBoxBuilder = new TagBuilder("div");
-                        //            messageBoxBuilder.Attributes.Add("id", "messagebox" + i);
-                        //            messageBoxBuilder.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
-                        //            messageBoxBuilder.AddCssClass(String.Format("messagebox {0}", Enum.GetName(typeof(MessageType), sessionMessage.Type).ToLowerInvariant()));
-                        //            messageBoxBuilder.InnerHtml += sessionMessage.Message;
-                        //            messageBoxStatusBar.InnerHtml += messageBoxBuilder.ToString();
-                        //            break;
-                        //    }
-                        //}
-                        //if (messageBoxStatusBar != null && !string.IsNullOrEmpty(messageBoxStatusBar.ToString()))
-                        //    response.Headers.Add("X-Message", messageBoxStatusBar.ToString());
-                        //if (messageBoxModal != null && !string.IsNullOrEmpty(messageBoxModal.ToString()))
-                        //    response.Headers.Add("X-ModalMessage", messageBoxModal.ToString());
                     }
                 }
             }
