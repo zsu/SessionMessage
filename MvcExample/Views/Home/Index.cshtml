@@ -15,7 +15,7 @@
                         <div class="control-group">
                             <div class="controls">
                                 <label class="control-label" for="message">Message</label>
-                                @Html.TextAreaFor(m => m.Message, new { rows = "3", cols = "50", placeholder = "Enter a message ..." })
+                                @Html.TextAreaFor(m => m.Message, new { rows = "3", cols = "50", placeholder = "Enter a message ..." ,id = "tbMessage" })
                             </div>
                         </div>
                     </div>
@@ -49,6 +49,7 @@
 
                 <div class="row">
                     <input type="submit" class="btn btn-primary btn-large" value="Show Message" />
+                    <input type="button" class="btn btn-primary btn-large" id="btnAjax" value="Ajax Message" />
                 </div>
             </div>
 
@@ -61,4 +62,37 @@
             </footer>
         </section>
     </div>
+}
+@section scripts
+{
+    <script type="text/javascript">
+        var MessageType=
+        {
+            Error : 1,
+            Warning : 2,
+            Info : 3,
+            Success : 4
+        };
+        var MessageBehaviors=
+        {
+            StatusBar : 1,
+            Modal : 2
+        }
+        $().ready(function () {
+            $('#btnAjax').click(function () {
+                var data = {Message: $("textarea#tbMessage").val(), Type: MessageType[$('input[name=Type]:checked').val()], Behaviors: MessageBehaviors[$('input[name=Behaviors]:checked').val()]}
+                $.ajax({
+                    url: '@Url.Action("AjaxMessage","Home")',
+                    method: "post",
+                    dataType: "html",
+                    contentType: 'application/json; charset=UTF-8',
+                    data: JSON.stringify(data),
+                    success: function (data)
+                    { },
+                    error: function (jqXHR, status, err)
+                    { }
+                });
+            })
+        });
+    </script>
 }

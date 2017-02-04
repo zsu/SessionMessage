@@ -1,5 +1,4 @@
 ﻿using SessionMessages.Core;
-using SessionMessages.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +36,13 @@ namespace MvcExample.Controllers
 			SessionMessageManager.SetMessage(vm.Type, vm.Behaviors, vm.Message);
 			return View(vm);
 		}
-	}
+        [HttpPost]
+        public ActionResult AjaxMessage(SessionMessageViewModel vm)
+        {
+            SessionMessageManager.SetMessage(vm.Type, vm.Behaviors, vm.Message);
+            return View("Index");
+        }
+    }
 	public class SessionMessageViewModel
 	{
 		public string Caption { get; set; }
