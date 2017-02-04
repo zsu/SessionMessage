@@ -90,6 +90,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bundleconfig.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +99,23 @@
       <Name>SessionMessages.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\sessionmessage.css" />
+    <None Include="Scripts\sessionmessage.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\sessionmessage.min.css">
+      <DependentUpon>sessionmessage.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\sessionmessage.min.js">
+      <DependentUpon>sessionmessage.js</DependentUpon>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s/y $(ProjectDir)Scripts\*.min.js $(SolutionDir)\nuget\Scripts
+xcopy /s/y $(ProjectDir)Content\* $(SolutionDir)\nuget\Content</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

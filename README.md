@@ -30,12 +30,12 @@ WebForms:
 ```
 ```xml
 Razor:
-@Html.FluentSessionMessage().DisplayPosition(Position.TopRight).Timeout(5000).ImagePath("/Content/Images/")
+@Html.FluentSessionMessage().DisplayPosition(Position.TopRight).Timeout(5000)
 
 WebForms:
 <%@Html.FluentSessionMessage().DisplayPosition(Position.TopRight).Timeout(5000).ImagePath("/Content/Images/") %> 
 ```
-  * Link to Jquery/JQuery.UI/toastr on your page: 
+  * Link to Jquery/JQuery.UI/toastr on your page(Before the call to @Html.FluentSessionMessage()): 
 ```xml
     <link href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>

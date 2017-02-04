@@ -131,6 +131,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\SessionMessages.Mvc\Content\sessionmessage.css">
+      <Link>Content\sessionmessage.css</Link>
+    </Content>
+    <Content Include="..\SessionMessages.Mvc\Scripts\sessionmessage.js">
+      <Link>Scripts\sessionmessage.js</Link>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\fail.gif" />
@@ -269,6 +275,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s/y $(SolutionDir)SessionMessages.Mvc\Content\sessionmessage.css $(ProjectDir)Content
+xcopy /s/y $(SolutionDir)SessionMessages.Mvc\Scripts\sessionmessage.min.js $(ProjectDir)Scripts
+</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
