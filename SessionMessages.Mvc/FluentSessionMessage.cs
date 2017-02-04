@@ -79,12 +79,12 @@ namespace SessionMessages.Mvc
         {
             var messages = string.Empty;
             List<SessionMessage> sessionMessages = SessionMessageManager.GetMessage();
+            TagBuilder messageWrapper = null, messageBoxBuilder = null, messageBoxStatusBar = null, messageBoxModalBuilder = null, messageBoxModal = null;
+            messageWrapper = new TagBuilder("div");
+            messageWrapper.Attributes.Add("id", "messagewrapper");
+            messageWrapper.Attributes.Add("style", "display: none");
             if (sessionMessages != null && sessionMessages.Count > 0)
             {
-				TagBuilder messageWrapper=null,messageBoxBuilder = null, messageBoxStatusBar = null, messageBoxModalBuilder = null, messageBoxModal = null;
-				messageWrapper = new TagBuilder("div");
-				messageWrapper.Attributes.Add("id", "messagewrapper");
-				messageWrapper.Attributes.Add("style", "display: none");
                 for (int i = 0; i < sessionMessages.Count; i++)
                 {
                     var sessionMessage = sessionMessages[i];
@@ -128,12 +128,12 @@ namespace SessionMessages.Mvc
                 messages = messageBoxStatusBar == null || string.IsNullOrEmpty(messageBoxStatusBar.ToString()) ? null : messageBoxStatusBar.ToString();
 				messages+= messageBoxModal == null || string.IsNullOrEmpty(messageBoxModal.ToString()) ? null : messageBoxModal.ToString();
 				messageWrapper.InnerHtml += messages;
-				messages = messageWrapper.ToString();
                 SessionMessageManager.Clear();
             }
             //return MvcHtmlString.Create(messages);
-			//return htmlHelper.Raw(RenderCss()+"\n"+messages+RenderScript());
-			return messages;
+            //return htmlHelper.Raw(RenderCss()+"\n"+messages+RenderScript());
+            messages = messageWrapper.ToString();
+            return messages;
         }
 		private string RenderScript()
 		{
@@ -206,6 +206,7 @@ function displayMessages() {
                 // display status message for 5 sec only
                 timeoutId = setTimeout(function () {
                     messagewrapper.slideUp('slow');
+                    clearMessages();
                 }, 5000);
                 $(document).click(function () {
                     clearMessages();
@@ -298,6 +299,7 @@ function checkAndHandleMessageFromHeader(request) {
 function displayMessage(message) {
     var jsonResult = JSON.parse(message);
     if (jsonResult) {
+        clearMessages();
         jQuery('<div/>', {
             id: 'messageboxstatusbar',
             class: 'messagebox'
@@ -343,7 +345,7 @@ function displayModalMessage(message) {
                     return true;
             }
             jQuery('<div/>', {
-                class: 'messagebox ' + item.Type,
+                class: 'messagebox ' + item.Type.toLowerCase(),
                 text: item.Message,
                 key: item.Key
             }).appendTo('#messageboxmodal');
