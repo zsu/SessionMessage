@@ -3,7 +3,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Collections.Generic;
 using System.Text;
-using System.Web.Security.AntiXss;
 using SessionMessages.Core;
 
 namespace SessionMessages.Mvc
@@ -102,7 +101,7 @@ namespace SessionMessages.Mvc
                             messageBoxModalBuilder.AddCssClass(String.Format("messagebox {0}", Enum.GetName(typeof(MessageType), sessionMessage.Type).ToLowerInvariant()));
                             if(!string.IsNullOrEmpty(sessionMessage.Key))
                                 messageBoxBuilder.Attributes.Add("key", sessionMessage.Key);
-                            messageBoxModalBuilder.InnerHtml += AntiXssEncoder.HtmlEncode(sessionMessage.Message,false);
+                            messageBoxModalBuilder.InnerHtml += sessionMessage.Message;
                             messageBoxModal.InnerHtml += messageBoxModalBuilder.ToString();
                             break;
                         case MessageBehaviors.StatusBar:
@@ -120,7 +119,7 @@ namespace SessionMessages.Mvc
                             messageBoxBuilder.AddCssClass(String.Format("messagebox {0}", Enum.GetName(typeof(MessageType), sessionMessage.Type).ToLowerInvariant()));
                             if(!string.IsNullOrEmpty(sessionMessage.Key))
                                 messageBoxBuilder.Attributes.Add("key", sessionMessage.Key);
-                            messageBoxBuilder.InnerHtml += AntiXssEncoder.HtmlEncode(sessionMessage.Message,false);
+                            messageBoxBuilder.InnerHtml += sessionMessage.Message;
                             messageBoxStatusBar.InnerHtml += messageBoxBuilder.ToString();
                             break;
                     }
