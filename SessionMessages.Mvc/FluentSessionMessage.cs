@@ -100,7 +100,7 @@ namespace SessionMessages.Mvc
                             //messageBoxModalBuilder.Attributes.Add("behavior", ((int)sessionMessage.Behavior).ToString());
                             messageBoxModalBuilder.AddCssClass(String.Format("messagebox {0}", Enum.GetName(typeof(MessageType), sessionMessage.Type).ToLowerInvariant()));
                             if(!string.IsNullOrEmpty(sessionMessage.Key))
-                                messageBoxBuilder.Attributes.Add("key", sessionMessage.Key);
+                                messageBoxModalBuilder.Attributes.Add("key", sessionMessage.Key);
                             messageBoxModalBuilder.InnerHtml += sessionMessage.Message;
                             messageBoxModal.InnerHtml += messageBoxModalBuilder.ToString();
                             break;
