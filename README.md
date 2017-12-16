@@ -1,6 +1,6 @@
 # What is SessionMessage
 
-SessionMessage is a asp.net MVC/Web Form library for Modal dialog/StatusBar notifications.
+SessionMessage is an asp.net MVC/Web Form library for Modal dialog/StatusBar notifications.
 
 Some of the features of SessionMessage are:
 
