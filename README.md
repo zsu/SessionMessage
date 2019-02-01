@@ -37,10 +37,10 @@ WebForms:
 ```
   * Link to Jquery/JQuery.UI/toastr on your page(Before the call to @Html.FluentSessionMessage()): 
 ```xml
-    <link href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
-    <script src='https://code.jquery.com/jquery-1.12.4.min.js' type='text/javascript'></script>
-    <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' type='text/javascript'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' type='text/javascript'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js' type='text/javascript'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js' type='text/javascript'></script>
 ```
   * Place fail.gif,info.gif,ok.gif,warn.gif in /Content/Images folder or use extension function ImagePath to set the actual path
