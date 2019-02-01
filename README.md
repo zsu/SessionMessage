@@ -1,6 +1,6 @@
-#What is SessionMessage
+# What is SessionMessage
 
-SessionMessage is a asp.net MVC/Web Form library for Modal dialog/StatusBar notifications.
+SessionMessage is an asp.net MVC/Web Form library for Modal dialog/StatusBar notifications.
 
 Some of the features of SessionMessage are:
 
@@ -9,14 +9,14 @@ Some of the features of SessionMessage are:
   * Support Ajax request notification
   * Customize options of display position, display timeout, animation effect,etc.
 
-#Demo
+# Demo
   * Demo can be found at: http://devs.azurewebsites.net/
 
-#NuGet
+# NuGet
 ```xml
 Install-Package SessionMessages.Mvc
 ```
-#Getting started with SessionMessage
+# Getting started with SessionMessage
 
   * Reference SessionMessages.Core.dll
   * Call SessionMessageManager.SetMessage(MessageType.Success, MessageBehaviors.StatusBar, "your notification message") when you want to display message;
@@ -56,12 +56,12 @@ WebForms:
 		}
 
 ```
-#Screenshots
+# Screenshots
 ![SessionMessage](screenshots/modaldialog.jpg?raw=true "modaldialog")
 ![SessionMessage](screenshots/statusbar_success.jpg?raw=true "statusbar success")
 ![SessionMessage](screenshots/statusbar_error.jpg?raw=true "statusbar error")
 ![SessionMessage](screenshots/statusbar_warning.jpg?raw=true "statusbar warning")
 ![SessionMessage](screenshots/statusbar_info.jpg?raw=true "statusbar info")
 
-#License
+# License
 All source code is licensed under MIT license - http://www.opensource.org/licenses/mit-license.php
