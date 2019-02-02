@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "Content/sessionmessage.min.css",
+    "inputFiles": [
+      "Content/sessionmessage.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/sessionmessage.min.js",
+    "inputFiles": [
+      "Scripts/sessionmessage.js"
+    ]
+  }
+]

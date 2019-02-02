@@ -1,0 +1,1 @@
+C:\Projects\Home\nuget pack SessionMessages.Mvc.nuspec
