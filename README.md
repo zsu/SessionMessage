@@ -1,3 +1,6 @@
+[![NuGet](https://img.shields.io/nuget/v/SessionMessages.Mvc.svg)](https://www.nuget.org/packages/SessionMessages.Mvc)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 # What is SessionMessage
 
 SessionMessage is an asp.net MVC/Web Form library for Modal dialog/StatusBar notifications.
